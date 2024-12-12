@@ -1,0 +1,113 @@
+.theme-wrapper {
+    width: 100%;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+
+    &.theme02 {
+        color: var(--text-dark-yellow);
+    }
+
+    &.theme03 {
+        color: var(--text-yellow-light);
+    }
+
+    .theme-text {
+        font-size: 10px;
+        font-weight: 100;
+        opacity: 0.9;
+        letter-spacing: 2px;
+    }
+
+    .options-theme-box {
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        //width: 50px;
+        height: 100%;
+        align-items: center;
+        gap: 5px;
+
+        .numbers {
+            display: flex;
+            gap: 12px;
+        }
+
+        .selection-theme {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background-toggle);
+            width: 60px;
+            height: 20px;
+            padding: 5px;
+            border-radius: 10px 10px 10px 10px;
+            /* Ajuste proporcional */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            gap: 5px;
+            position: relative;
+            /* Necessário para a posição absoluta do círculo */
+
+            &.theme02 {
+                background: var(--background-toggle-gray-red);
+            }
+
+            &.theme03 {
+                background: var(--background-violet-dark-2);
+            }
+
+            .circle {
+                background: var(--key-background-red);
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: transparent;
+                padding: 5px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                /* Centralizando verticalmente */
+                transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+                /* Suavidade */
+
+
+                &.active {
+                    background: var(--key-background-red);
+                    //transform: translate(35%, -35%) scale(1.2);
+
+                }
+
+                &.theme02 {
+                    background: var(--key-background-orange-2);
+                }
+
+                &.theme03 {
+                    background: var(--key-background-cyan-2);
+                }
+
+            }
+
+            .circle:nth-child(1) {
+                left: 10%;
+            }
+
+            .circle:nth-child(2) {
+                left: 40%;
+            }
+
+            .circle:nth-child(3) {
+                left: 75%;
+            }
+
+            .circle:not(.active) {
+                opacity: 0;
+            }
+        }
+    }
+}
