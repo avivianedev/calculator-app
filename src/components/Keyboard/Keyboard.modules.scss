@@ -188,6 +188,8 @@
 
 @media (max-width: 375px) or (max-width: 1155px) {
     .keyboard-wrapper {
+        padding: .5em;
+
         .k-digit {
             width: 20%;
             height: 13vw;
@@ -195,7 +197,7 @@
             &.reset,
             &.equal {
                 height: 50%;
-                height: 15vw;
+                height: 13vw;
             }
         }
     }
